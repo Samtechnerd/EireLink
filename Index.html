@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>EireLink</title>
+    
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+
+    <div class="search-container">
+        <div class="search-box">
+            <span class="logo">☘️</span>
+            <input type="text" id="searchInput" placeholder="Search stop name or 8203...">
+            <button onclick="searchStop()">Go</button>
+        </div>
+    </div>
+
+    <div id="map"></div>
+
+    <div id="drawer" class="drawer">
+        <div class="drawer-header">
+            <div>
+                <h2 id="stopName">Stop Name</h2>
+                <small id="stopCode">Stop #1234</small>
+            </div>
+            <button class="close-btn" onclick="closeDrawer()">✕</button>
+        </div>
+        
+        <div class="drawer-content" id="drawerContent">
+            <p>Loading...</p>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <script src="stops.js"></script>
+    
+    <script src="app.js"></script>
+
+</body>
+</html>
