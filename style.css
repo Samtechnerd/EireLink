@@ -1,0 +1,53 @@
+body { margin: 0; padding: 0; font-family: -apple-system, sans-serif; overflow: hidden; }
+
+/* The Map fills the screen */
+#map { height: 100vh; width: 100vw; z-index: 1; }
+
+/* Search Bar */
+.search-container {
+    position: absolute; top: 20px; left: 0; right: 0; 
+    z-index: 999; display: flex; justify-content: center; pointer-events: none;
+}
+.search-box {
+    pointer-events: auto;
+    background: white; padding: 10px 15px; border-radius: 50px;
+    display: flex; align-items: center; gap: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2); width: 90%; max-width: 400px;
+}
+.search-box input { border: none; outline: none; flex: 1; font-size: 16px; }
+.search-box button { 
+    background: #009F6B; color: white; border: none; 
+    padding: 8px 15px; border-radius: 20px; font-weight: bold; cursor: pointer;
+}
+
+/* Bottom Drawer */
+.drawer {
+    position: absolute; bottom: -50vh; /* Hidden below screen */
+    left: 0; right: 0; height: 40vh;
+    background: white; z-index: 1000;
+    border-top-left-radius: 20px; border-top-right-radius: 20px;
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
+    transition: bottom 0.3s ease-out;
+    display: flex; flex-direction: column;
+}
+.drawer.open { bottom: 0; } /* Slide up class */
+
+.drawer-header {
+    padding: 15px 20px; border-bottom: 1px solid #eee;
+    display: flex; justify-content: space-between; align-items: center;
+}
+.drawer-header h2 { margin: 0; font-size: 18px; color: #333; }
+.close-btn { background: none; border: none; font-size: 20px; cursor: pointer; }
+
+.drawer-content { padding: 20px; overflow-y: auto; flex: 1; }
+
+/* The Bus List Design */
+.bus-card {
+    display: flex; align-items: center; padding: 10px 0; border-bottom: 1px solid #f0f0f0;
+}
+.bus-route {
+    background: #ffcc00; color: #333; font-weight: bold;
+    padding: 5px 10px; border-radius: 20px; margin-right: 15px; min-width: 40px; text-align: center;
+}
+.bus-dest { flex: 1; font-weight: 500; }
+.bus-time { font-weight: bold; color: #009F6B; }
